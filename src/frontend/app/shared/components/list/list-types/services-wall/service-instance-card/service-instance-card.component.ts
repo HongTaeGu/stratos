@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
 
 import { IServiceInstance } from '../../../../../../core/cf-api-svc.types';
 import { ServicesWallService } from '../../../../../../features/services/services/services-wall.service';
@@ -46,15 +46,24 @@ export class ServiceInstanceCardComponent extends CardCell<APIResource<IServiceI
   ) {
     super();
 
+
+  }
+
+  ngOnInit() {
+
+    this.serviceInstanceTags = this.row.entity.tags.map(t => ({
+      value: t
+    }));
+
     this.cardMenu = [
       {
         label: 'Edit',
         action: this.edit,
       },
       {
-        label: 'Detach',
+        label: 'Unbind',
         action: this.detach,
-        disabled: this.hasMultipleBindings
+        disabled: observableOf(this.row.entity.service_bindings.length === 0)
       },
       {
         label: 'Delete',
@@ -62,15 +71,11 @@ export class ServiceInstanceCardComponent extends CardCell<APIResource<IServiceI
       }
     ];
 
+    this.cfGuid = this.row.entity.cfGuid;
   }
 
   detach = () => {
-    const serviceBindingGuid = this.serviceInstanceEntity.entity.service_bindings[0].metadata.guid;
-    this.serviceActionHelperService.detachServiceBinding(
-      serviceBindingGuid,
-      this.serviceInstanceEntity.metadata.guid,
-      this.serviceInstanceEntity.entity.cfGuid
-    );
+    this.serviceActionHelperService.detachServiceBinding(this.row.entity.service_bindings, this.row.metadata.guid, this.row.entity.cfGuid);
   }
 
 
