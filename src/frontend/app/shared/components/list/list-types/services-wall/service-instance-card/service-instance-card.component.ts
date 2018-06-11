@@ -52,7 +52,7 @@ export class ServiceInstanceCardComponent extends CardCell<APIResource<IServiceI
 
   ngOnInit() {
 
-    this.serviceInstanceTags = this.row.entity.tags.map(t => ({
+    this.serviceInstanceTags = this.serviceInstanceEntity.entity.tags.map(t => ({
       value: t
     }));
 
@@ -88,7 +88,10 @@ export class ServiceInstanceCardComponent extends CardCell<APIResource<IServiceI
     ];
   }
   detach = () => {
-    this.serviceActionHelperService.detachServiceBinding(this.row.entity.service_bindings, this.row.metadata.guid, this.row.entity.cfGuid);
+    this.serviceActionHelperService.detachServiceBinding(
+      this.serviceInstanceEntity.entity.service_bindings,
+      this.serviceInstanceEntity.metadata.guid,
+      this.serviceInstanceEntity.entity.cfGuid);
   }
 
   delete = () => this.serviceActionHelperService.deleteServiceInstance(
