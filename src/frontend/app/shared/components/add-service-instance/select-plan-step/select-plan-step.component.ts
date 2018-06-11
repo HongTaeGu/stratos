@@ -1,7 +1,14 @@
 
 import { of as observableOf, BehaviorSubject, Observable, Subscription, combineLatest as observableCombineLatest } from 'rxjs';
 import { TitleCasePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnDestroy, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ComponentFactoryResolver,
+  OnDestroy,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -24,8 +31,6 @@ import { CardStatus } from '../../application-state/application-state.service';
 import { SetServicePlan, SetCreateServiceInstanceCFDetails } from '../../../../store/actions/create-service-instance.actions';
 import { AppState } from '../../../../store/app-state';
 import {
-  selectCreateServiceInstanceCfGuid,
-  selectCreateServiceInstanceServiceGuid,
   selectCreateServiceInstanceOrgGuid,
   selectCreateServiceInstanceSpaceGuid,
   selectCreateServiceInstance,
@@ -37,6 +42,7 @@ import { CreateServiceInstanceHelperServiceFactory } from '../create-service-ins
 import { CreateServiceInstanceHelperService } from '../create-service-instance-helper.service';
 import { CsiGuidsService } from '../csi-guids.service';
 import { NoServicePlansComponent } from '../no-service-plans/no-service-plans.component';
+import { CsiModeService } from '../csi-mode.service';
 
 interface ServicePlan {
   id: string;
@@ -74,16 +80,19 @@ export class SelectPlanStepComponent implements OnDestroy {
     private cSIHelperServiceFactory: CreateServiceInstanceHelperServiceFactory,
     private activatedRoute: ActivatedRoute,
     private csiGuidsService: CsiGuidsService,
-    private componentFactoryResolver: ComponentFactoryResolver
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private modeService: CsiModeService
+
   ) {
 
     this.stepperForm = new FormGroup({
       servicePlans: new FormControl('', Validators.required),
     });
 
-    if (isMarketplaceMode(activatedRoute)) {
+    if (modeService.isMarketplaceMode()) {
       this.store.dispatch(new SetCreateServiceInstanceCFDetails(activatedRoute.snapshot.params.cfId));
     }
+
 
     this.servicePlans$ = this.store.select(selectCreateServiceInstance).pipe(
       filter(p => !!p.orgGuid && !!p.spaceGuid && !!p.serviceGuid),
@@ -139,8 +148,6 @@ export class SelectPlanStepComponent implements OnDestroy {
   }
 
   onEnter = () => {
-
-
     this.subscription = this.servicePlans$.pipe(
       filter(p => !!p && p.length > 0),
       tap(o => {
@@ -150,8 +157,6 @@ export class SelectPlanStepComponent implements OnDestroy {
         this.validate.next(this.stepperForm.valid);
       }),
     ).subscribe();
-
-
   }
 
   onNext = () => {

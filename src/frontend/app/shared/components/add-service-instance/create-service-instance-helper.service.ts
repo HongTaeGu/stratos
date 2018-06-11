@@ -40,11 +40,7 @@ import { APIResource } from '../../../store/types/api.types';
 import { PaginationMonitorFactory } from '../../monitors/pagination-monitor.factory';
 import { QParam } from '../../../store/types/pagination.types';
 
-export enum CreateServiceInstanceMode {
-  MARKETPLACE_MODE = 'marketPlaceMode',
-  APP_SERVICES_MODE = 'appServicesMode',
-  SERVICES_WALL_MODE = 'servicesWallMode'
-}
+
 @Injectable()
 export class CreateServiceInstanceHelperService {
   servicePlanVisibilities$: Observable<APIResource<IServicePlanVisibility>[]>;
@@ -57,7 +53,6 @@ export class CreateServiceInstanceHelperService {
     private store: Store<AppState>,
     public serviceGuid: string,
     public cfGuid: string,
-    public mode: CreateServiceInstanceMode,
     private entityServiceFactory: EntityServiceFactory,
     private paginationMonitorFactory: PaginationMonitorFactory
   ) {
@@ -114,9 +109,6 @@ export class CreateServiceInstanceHelperService {
     ).entities$;
 
   }
-
-  isMarketplace = () => this.mode === CreateServiceInstanceMode.MARKETPLACE_MODE;
-  isAppServices = () => this.mode === CreateServiceInstanceMode.APP_SERVICES_MODE;
 
   getVisibleServicePlans = () => {
     return this.getServicePlans().pipe(
