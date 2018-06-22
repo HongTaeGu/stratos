@@ -1,216 +1,163 @@
 # Change Log
 
-# 2.0.0 Beta 1
+## [2.0.0-beta-002](https://github.com/cloudfoundry-incubator/stratos/tree/2.0.0-beta-002) (2018-06-22)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/v2.0.0-beta-001...2.0.0-beta-002)
 
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/1.0.2...v2.0.0-beta-001)
+**Fixed bugs:**
 
-This is the first Beta release of Version 2 of Stratos. This is a major release.
+- Error logged in console when reloading to app routes page [\#2493](https://github.com/cloudfoundry-incubator/stratos/issues/2493)
+- App instance error after un-mapping a route [\#2475](https://github.com/cloudfoundry-incubator/stratos/issues/2475)
+- Confirm Dialog needs margin to the left of the icon [\#2474](https://github.com/cloudfoundry-incubator/stratos/issues/2474)
+- Create Service Instance: Errors not handled [\#2471](https://github.com/cloudfoundry-incubator/stratos/issues/2471)
+- UI stops working [\#2468](https://github.com/cloudfoundry-incubator/stratos/issues/2468)
+- Create service instance from marketplace with 1 org and 1 space - can not proceed [\#2467](https://github.com/cloudfoundry-incubator/stratos/issues/2467)
+- Org card is empty - shows -/- [\#2462](https://github.com/cloudfoundry-incubator/stratos/issues/2462)
+- Error after disconnecting an endpoint [\#2460](https://github.com/cloudfoundry-incubator/stratos/issues/2460)
+- All endpoints are incorrectly shown to be in error state [\#2459](https://github.com/cloudfoundry-incubator/stratos/issues/2459)
+- Endpoint warning message - icon is not aligned correctly [\#2457](https://github.com/cloudfoundry-incubator/stratos/issues/2457)
+- When one CF fails, we don't show data for those that succeed. [\#2456](https://github.com/cloudfoundry-incubator/stratos/issues/2456)
+- Exception on create space stepper when you cancel out [\#2454](https://github.com/cloudfoundry-incubator/stratos/issues/2454)
+- Error when creating a Space with a space character in the name [\#2451](https://github.com/cloudfoundry-incubator/stratos/issues/2451)
+- Users tab loads indefinitely if a non-admin user access it [\#2382](https://github.com/cloudfoundry-incubator/stratos/issues/2382)
+- Fix backend error logging [\#2484](https://github.com/cloudfoundry-incubator/stratos/pull/2484)
+- Fix for panic when res is not set in error logging [\#2441](https://github.com/cloudfoundry-incubator/stratos/pull/2441)
 
-The main focus of this release is a new version of the front-end UI in Angular (Version 1 used AngularJS). The UI has undergone numerous updates and we have switched out our own UI component set in favour of Material Design.
+**Closed issues:**
 
-Highlights of version 2:
+- Cf in Cf/org/space should be all caps [\#2447](https://github.com/cloudfoundry-incubator/stratos/issues/2447)
+- Firefox rendering - focus border on drop-down menu items [\#2446](https://github.com/cloudfoundry-incubator/stratos/issues/2446)
+- Add No Javascript message [\#2444](https://github.com/cloudfoundry-incubator/stratos/issues/2444)
+- Users Permissions: Removing the last role \(Org User\) results in an exception [\#2438](https://github.com/cloudfoundry-incubator/stratos/issues/2438)
+- Users Permissions: Assigning a role to a user that has none results in an exception [\#2428](https://github.com/cloudfoundry-incubator/stratos/issues/2428)
+- Create ChangeLog for 2.0.0 Beta 1 [\#2421](https://github.com/cloudfoundry-incubator/stratos/issues/2421)
+- Redeploy does not update commit id of deployment [\#2419](https://github.com/cloudfoundry-incubator/stratos/issues/2419)
+- Exception thrown when adding space to empty org [\#2418](https://github.com/cloudfoundry-incubator/stratos/issues/2418)
+- Warn if cookie domain does not match Stratos URL [\#2414](https://github.com/cloudfoundry-incubator/stratos/issues/2414)
+- Add commit SHA to version when built for Kubernetes/Docker Compose [\#2410](https://github.com/cloudfoundry-incubator/stratos/issues/2410)
+- Investigate permission bug [\#2408](https://github.com/cloudfoundry-incubator/stratos/issues/2408)
 
-- Adoption of Angular in place of AngularJS
-- User of the Angular Material component library and an adoption of Material Design
-- Largely feature complete with version 1 (see below)
-- Improved Services support with Services and Marketplace now shown at the top-level of the UI
-- Improved UI throughout with card layouts used to improve readability
-- Added ability to re-deploy applications from GitHub
-- Improved Application UI - Instances and Routes information is now shown on separate tabs and the instances view has been improved
+**Merged pull requests:**
 
-The following features in version 1 are not currently available in version 2:
+- Build-args file should be JSON [\#2503](https://github.com/cloudfoundry-incubator/stratos/pull/2503)
+- Provide Create Service Instance its own CfOrgSpaceDataService instance [\#2501](https://github.com/cloudfoundry-incubator/stratos/pull/2501)
+- Fix smaller UI issues [\#2499](https://github.com/cloudfoundry-incubator/stratos/pull/2499)
+- Ensure requests to multiple endpoints continue if one fails [\#2498](https://github.com/cloudfoundry-incubator/stratos/pull/2498)
+- Deal with non CF Jetstream failed requests [\#2497](https://github.com/cloudfoundry-incubator/stratos/pull/2497)
+- Show users without usernames [\#2496](https://github.com/cloudfoundry-incubator/stratos/pull/2496)
+- Add SSO Login notes [\#2495](https://github.com/cloudfoundry-incubator/stratos/pull/2495)
+- Ensure we only raise internal errors on fetch api requests [\#2494](https://github.com/cloudfoundry-incubator/stratos/pull/2494)
+-  Fix failure to update commit info on redeploy [\#2492](https://github.com/cloudfoundry-incubator/stratos/pull/2492)
+- SSO Login Support [\#2491](https://github.com/cloudfoundry-incubator/stratos/pull/2491)
+- Fix issue timing issue resulting in  invalid Space Service request [\#2489](https://github.com/cloudfoundry-incubator/stratos/pull/2489)
+- Fixed exception after unmapping routes [\#2488](https://github.com/cloudfoundry-incubator/stratos/pull/2488)
+- Improved fix for exception on org screen after fresh load on create space [\#2487](https://github.com/cloudfoundry-incubator/stratos/pull/2487)
+- Center align icon and align text to it [\#2485](https://github.com/cloudfoundry-incubator/stratos/pull/2485)
+- Fix layout on summary pages [\#2482](https://github.com/cloudfoundry-incubator/stratos/pull/2482)
+- Service Catalog UI Tweaks [\#2481](https://github.com/cloudfoundry-incubator/stratos/pull/2481)
+- Fix location of Dockerfile [\#2480](https://github.com/cloudfoundry-incubator/stratos/pull/2480)
+- Support OAuth login to console - V2 [\#2479](https://github.com/cloudfoundry-incubator/stratos/pull/2479)
+- Fix error shown when cancelling out of a freshly loaded create space stepper [\#2478](https://github.com/cloudfoundry-incubator/stratos/pull/2478)
+- Fix unit tests [\#2476](https://github.com/cloudfoundry-incubator/stratos/pull/2476)
+- Users tables: Only show org/space name in pills when needed [\#2443](https://github.com/cloudfoundry-incubator/stratos/pull/2443)
+- Update v2 info on readme, fix typo in roadmap doc [\#2442](https://github.com/cloudfoundry-incubator/stratos/pull/2442)
+- Fix issue where space count is wrong after deleting a space [\#2439](https://github.com/cloudfoundry-incubator/stratos/pull/2439)
+- Update the connected user roles section of store on roles change [\#2435](https://github.com/cloudfoundry-incubator/stratos/pull/2435)
+- Fix list state \(deleting/etc\) [\#2434](https://github.com/cloudfoundry-incubator/stratos/pull/2434)
+- Fix exception when a space is added to an empty org [\#2433](https://github.com/cloudfoundry-incubator/stratos/pull/2433)
+- Add back in Cookie Domain support [\#2432](https://github.com/cloudfoundry-incubator/stratos/pull/2432)
+- Fix exception thrown when only assign an org user role [\#2430](https://github.com/cloudfoundry-incubator/stratos/pull/2430)
+- Fix pagination of space level routes and service instance tables [\#2429](https://github.com/cloudfoundry-incubator/stratos/pull/2429)
+- Disable removal of `org user` role if user has others [\#2427](https://github.com/cloudfoundry-incubator/stratos/pull/2427)
+- V2 Beta 1 Change Log [\#2423](https://github.com/cloudfoundry-incubator/stratos/pull/2423)
+- Display commit SHA/ Release tag in the About page [\#2416](https://github.com/cloudfoundry-incubator/stratos/pull/2416)
+- Show an overlay and deleting message when deleting from a card or table action. [\#2415](https://github.com/cloudfoundry-incubator/stratos/pull/2415)
+- Harden API error handling in case string is returned [\#2413](https://github.com/cloudfoundry-incubator/stratos/pull/2413)
+- Table loading init [\#2412](https://github.com/cloudfoundry-incubator/stratos/pull/2412)
+- Fix errors when multiple cf's are connected as both admin and non-admin users [\#2409](https://github.com/cloudfoundry-incubator/stratos/pull/2409)
+- Fix and improve backend error handling with passthrough [\#2407](https://github.com/cloudfoundry-incubator/stratos/pull/2407)
+- Dev Release pipeline: Fix console image name [\#2406](https://github.com/cloudfoundry-incubator/stratos/pull/2406)
+- Fix not detecting admin user is admin scope is not stratos.admin [\#2403](https://github.com/cloudfoundry-incubator/stratos/pull/2403)
+- Users Table: Restrict org/space roles and prefix space name with org... depending on depth [\#2402](https://github.com/cloudfoundry-incubator/stratos/pull/2402)
+- Add support for longer timeout for mutating operations \(POST etc\) [\#2401](https://github.com/cloudfoundry-incubator/stratos/pull/2401)
+- Weekly update [\#2400](https://github.com/cloudfoundry-incubator/stratos/pull/2400)
+- CfOrgSpace Selector: Fix overzealous `no orgs` error message [\#2397](https://github.com/cloudfoundry-incubator/stratos/pull/2397)
+- Fix a few UX issues [\#2394](https://github.com/cloudfoundry-incubator/stratos/pull/2394)
+- Org space list - Deleting causes exceptions in other parts of the org page. [\#2393](https://github.com/cloudfoundry-incubator/stratos/pull/2393)
+- Fix infinite user list's loading indicator when connected as user with no roles [\#2390](https://github.com/cloudfoundry-incubator/stratos/pull/2390)
+- Fix TCP route creation and improve UI [\#2388](https://github.com/cloudfoundry-incubator/stratos/pull/2388)
+- Add link to space for service instances [\#2384](https://github.com/cloudfoundry-incubator/stratos/pull/2384)
+- Validate host/path pattern in Create Route form [\#2383](https://github.com/cloudfoundry-incubator/stratos/pull/2383)
+- Enable unbind operation in space-services [\#2378](https://github.com/cloudfoundry-incubator/stratos/pull/2378)
+- Add global deleting overlay for entity summary pages [\#2373](https://github.com/cloudfoundry-incubator/stratos/pull/2373)
+- Fix various application deploy bugs [\#2372](https://github.com/cloudfoundry-incubator/stratos/pull/2372)
 
-- i18n - V2 supports US English only. This will be addressed as soon as the Angular platform supports string translation outside of templates.
-- Extensions/Plugins - The ability to extend the UI at various points will be added in the next minor version.
-- Drag and Drop for Application Deployment - You can not drag and drop a file/folder or url onto the application deployment UI - you have to use the browse UI.
+## [v2.0.0-beta-001](https://github.com/cloudfoundry-incubator/stratos/tree/v2.0.0-beta-001) (2018-06-15)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/weekmarker...v2.0.0-beta-001)
 
-# 1.1.0 Release
+**Merged pull requests:**
 
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/1.0.2...1.1.0)
+- Ignore cookie domain for now [\#2399](https://github.com/cloudfoundry-incubator/stratos/pull/2399)
+- Update release pipeline [\#2398](https://github.com/cloudfoundry-incubator/stratos/pull/2398)
+- Fix bad error formatting on the backend [\#2392](https://github.com/cloudfoundry-incubator/stratos/pull/2392)
+- Tidy up pagination key creation [\#2391](https://github.com/cloudfoundry-incubator/stratos/pull/2391)
+- Fix space selection when user returns to CFOrgSpace selector [\#2389](https://github.com/cloudfoundry-incubator/stratos/pull/2389)
+- Fix issue where circular reference failed to denormalize an app's space [\#2385](https://github.com/cloudfoundry-incubator/stratos/pull/2385)
+- Fix env var modal exception after a service binding has been created [\#2381](https://github.com/cloudfoundry-incubator/stratos/pull/2381)
+- Tidy up the bind app step [\#2380](https://github.com/cloudfoundry-incubator/stratos/pull/2380)
+- Fix for App bound service is shown in services to bind to list [\#2379](https://github.com/cloudfoundry-incubator/stratos/pull/2379)
+- Skip CF/Org selection when creating a space-scoped service [\#2376](https://github.com/cloudfoundry-incubator/stratos/pull/2376)
+- Ensure the list paginator is shown when row is selected [\#2375](https://github.com/cloudfoundry-incubator/stratos/pull/2375)
+- Setup: Add skip ssl option and improve error handling [\#2374](https://github.com/cloudfoundry-incubator/stratos/pull/2374)
+- Fix app launch action display delay [\#2371](https://github.com/cloudfoundry-incubator/stratos/pull/2371)
+- Ensure no endpoint message on endpoint page is endpoint type agnostic [\#2370](https://github.com/cloudfoundry-incubator/stratos/pull/2370)
+- Fix duplicate deploy info when local folder [\#2368](https://github.com/cloudfoundry-incubator/stratos/pull/2368)
 
-**Improvements:**
+## [weekmarker](https://github.com/cloudfoundry-incubator/stratos/tree/weekmarker) (2018-06-11)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/1.1.0...weekmarker)
 
-- Added support for SUSE Cloud Foundry 1.1 configuration values to the Helm chart [\#1950](https://github.com/cloudfoundry-incubator/stratos/pull/1950)
+## [1.1.0](https://github.com/cloudfoundry-incubator/stratos/tree/1.1.0) (2018-04-12)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/2.0.0-dev...1.1.0)
 
-**Fixes:**
+## [2.0.0-dev](https://github.com/cloudfoundry-incubator/stratos/tree/2.0.0-dev) (2018-04-09)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/dev...2.0.0-dev)
 
-- Fix width of top nav bar menu's bottom border [\#1739](https://github.com/cloudfoundry-incubator/stratos/pull/1739)
+## [dev](https://github.com/cloudfoundry-incubator/stratos/tree/dev) (2018-04-06)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/bleeding-edge...dev)
 
-## 1.0.2 Release
+## [bleeding-edge](https://github.com/cloudfoundry-incubator/stratos/tree/bleeding-edge) (2018-03-29)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/1.0.2...bleeding-edge)
 
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/1.0.0...1.0.2)
+## [1.0.2](https://github.com/cloudfoundry-incubator/stratos/tree/1.0.2) (2018-03-06)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/1.0.0...1.0.2)
 
-**Improvements:**
+## [1.0.0](https://github.com/cloudfoundry-incubator/stratos/tree/1.0.0) (2018-01-09)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/0.9.9...1.0.0)
 
-- Added Confirmation prompts for stopping and restarting apps [\#1437](https://github.com/SUSE/stratos-ui/pull/1437)
+## [0.9.9](https://github.com/cloudfoundry-incubator/stratos/tree/0.9.9) (2017-12-08)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/0.9.8...0.9.9)
 
-**Fixes:**
+## [0.9.8](https://github.com/cloudfoundry-incubator/stratos/tree/0.9.8) (2017-11-23)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/0.9.7...0.9.8)
 
-- Memory and disk usage should respect the number of app instances [\#1625](https://github.com/SUSE/stratos-ui/pull/1625)
-- Fix issue around apps and routes missing from space entity [\#1447](https://github.com/SUSE/stratos-ui/pull/1447)
-- Fix minor localisation issue [\#1596](https://github.com/cloudfoundry-incubator/stratos/pull/1596)
+## [0.9.7](https://github.com/cloudfoundry-incubator/stratos/tree/0.9.7) (2017-11-09)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/0.9.6...0.9.7)
 
-## 1.0.0 Release
+## [0.9.6](https://github.com/cloudfoundry-incubator/stratos/tree/0.9.6) (2017-11-01)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/0.9.5...0.9.6)
 
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/0.9.9...1.0.0)
+## [0.9.5](https://github.com/cloudfoundry-incubator/stratos/tree/0.9.5) (2017-09-21)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/0.9.2...0.9.5)
 
-**Improvements:**
-- Added French localization (*Open Source build only*) [\#1419](https://github.com/SUSE/stratos-ui/pull/1419)
+## [0.9.2](https://github.com/cloudfoundry-incubator/stratos/tree/0.9.2) (2017-08-21)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/0.9.1...0.9.2)
 
-**Fixes:**
-- Removed dependency `jsdocs` because of security vulnerability [\#1428](https://github.com/SUSE/stratos-ui/pull/1428)
-- Fix vertical alignment for setup screens (*Open Source build only*) [\#1417](https://github.com/SUSE/stratos-ui/pull/1417)
+## [0.9.1](https://github.com/cloudfoundry-incubator/stratos/tree/0.9.1) (2017-08-01)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/0.9.0...0.9.1)
 
-## 0.9.9 Release Candidate 1 Release
+## [0.9.0](https://github.com/cloudfoundry-incubator/stratos/tree/0.9.0) (2017-07-27)
+[Full Changelog](https://github.com/cloudfoundry-incubator/stratos/compare/s4x...0.9.0)
 
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/0.9.8...0.9.9)
-
-This is the first Release Candidate of the Stratos UI Console. It contains the following improvements:
-
-**Improvements:**
-
-- Open Source build now uses a generic theme [\#1403](https://github.com/SUSE/stratos-ui/pull/1403)
-- SUSE build uses SUSE theme and contains EULA in the about screen [\#1404](https://github.com/SUSE/stratos-ui/pull/1404)
-- Run Mariadb mysqld process as mysql user [\#1397](https://github.com/SUSE/stratos-ui/pull/1397)
-- Helm Chart: Persistent Volume size increased from 1Mi to 20Mi to avoid issues with some storage providers [\#1409](https://github.com/SUSE/stratos-ui/pull/1409)
-
-## 0.9.8 Beta-3 Release 2
-
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/0.9.7...0.9.8)
-
-This is an update of the third beta release of the Stratos UI Console. It contains the following bug fixes and improvements:
-
-**Improvements:**
-
-- Improve display of byte usage information for small numbers [\#1388](https://github.com/SUSE/stratos-ui/pull/1388)
-- Remove the yellow autocomplete background in dark form fields [\#1372](https://github.com/SUSE/stratos-ui/pull/1372)
-- Helm Chart: Create Image pull secret for secure repositories [\#1387](https://github.com/SUSE/stratos-ui/pull/1387)
-- Helm Chart: Remove `shared` mode [\#1385](https://github.com/SUSE/stratos-ui/pull/1385)
-
-**Fixes:**
-
-- Fix link shown on cf dashboard when no endpoints connected [\#1369](https://github.com/SUSE/stratos-ui/pull/1369)
-- Fix leak of Persistent volume claims when deleting Helm deployed release [\#1368](https://github.com/SUSE/stratos-ui/pull/1368)
-- Remove legacy images and associated files [\#1390](https://github.com/SUSE/stratos-ui/pull/1390)
-- Fix unsafe casting for mysql Service [\#1381](https://github.com/SUSE/stratos-ui/pull/1381)
-
-## 0.9.7 Beta-3 Release
-
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/0.9.6...0.9.7)
-
-This is the third beta release of the Stratos UI Console. It contains the following bug fixes:
-
-**Fixes:**
-- Updated Helm Chart to remove delete job when running in noShared mode [\#1364](https://github.com/SUSE/stratos-ui/pull/1364)
-- Updated Helm Chart to support common storage class for MariaDB and console [\#1363](https://github.com/SUSE/stratos-ui/pull/1363)
-- Updated Helm Chart to remove `postgres-client` from postflight job [\#1358](https://github.com/SUSE/stratos-ui/pull/1358)
-- Updated Helm Chart to remove noShared backend container image [\#1357](https://github.com/SUSE/stratos-ui/pull/1357)
-
-## 0.9.6 Beta-2 Release
-
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/0.9.5...0.9.6)
-
-This is the second beta release of the Stratos UI Console. It contains the following bug fixes and improvements:
-
-**Improvements:**
-
-- Add ability to edit a service instance [\#1324](https://github.com/SUSE/stratos-ui/pull/1324)
-- Improve URL validation on setup flow [\#1320](https://github.com/SUSE/stratos-ui/pull/1320)
-- Make search boxes not usable and visually show this while fetching orgs and spaces [\#1287](https://github.com/SUSE/stratos-ui/pull/1287)
-- Make sure the expiry date time is relative to the time as the client sees it [\#1299](https://github.com/SUSE/stratos-ui/pull/1299)
-- Add loading indicators to endpoints and Cloud Foundry dashboards [\#1325](https://github.com/SUSE/stratos-ui/pull/1325)
-- Improve the loading indicators on initial console load [\#1286](https://github.com/SUSE/stratos-ui/pull/1286)
-- Move deploy status and title into the log viewer title bar. [\#1277](https://github.com/SUSE/stratos-ui/pull/1277)
-- Upgrade to Angular 1.6 [\#1307](https://github.com/SUSE/stratos-ui/pull/1307)
-- Enable binding of mysql db service to CF hosted console [\#1260](https://github.com/SUSE/stratos-ui/pull/1260)
-- Add support for a backend healthcheck [\#1321](https://github.com/SUSE/stratos-ui/pull/1321)
-- Allow helm scf-values to be used to deploy the console [\#1344](https://github.com/SUSE/stratos-ui/pull/1344)
-- Add ability to configure UAA settings when deploying UI through helm chart [\#1315](https://github.com/SUSE/stratos-ui/pull/1315)
-- Use custom buildpack to build Stratos UI [\#1283](https://github.com/SUSE/stratos-ui/pull/1283)
-- Migrate container images to opensuse:42.3 base [\#1293](https://github.com/SUSE/stratos-ui/pull/1293)
-- Replace goose with custom database migrator [\#1334](https://github.com/SUSE/stratos-ui/pull/1334)
-
-**Fixes:**
-
-- Fix for app wall cf/org/space context not carrying over to deploy-location selector [\#1273](https://github.com/SUSE/stratos-ui/pull/1273)
-- Add a logout button when only the error page is shown [\#1289](https://github.com/SUSE/stratos-ui/pull/1289)
-- Address minor bugs in the deploy application for github [\#1285](https://github.com/SUSE/stratos-ui/pull/1285)
-- Fix incorrect service summary info shown [\#1306](https://github.com/SUSE/stratos-ui/pull/1306)
-- Fix i10n for empty/no app events [\#1303](https://github.com/SUSE/stratos-ui/pull/1303)
-- Staging fails when pushed from Windows [\#1322](https://github.com/SUSE/stratos-ui/issues/1322)
-- Properly kill upgrade echo instance [\#1311](https://github.com/SUSE/stratos-ui/pull/1311)
-- Helm chart: Switch to `noShared` mode by default to support more setups [\#1295](https://github.com/SUSE/stratos-ui/pull/1295)
-- Kubernetes/GCE: Skip HTTP endpoint when a load balancer is being setup [\#1305](https://github.com/SUSE/stratos-ui/pull/1305)
-- Fix typo in error message of sshHostKeyChecker [\#1294](https://github.com/SUSE/stratos-ui/pull/1294)
-- Fix line endings [\#1332](https://github.com/SUSE/stratos-ui/pull/1332)
+## [s4x](https://github.com/cloudfoundry-incubator/stratos/tree/s4x) (2017-06-06)
 
 
-## 0.9.5 Beta-1 Release
-
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/0.9.2...0.9.5)
-
-This is the first beta release of the Stratos UI Console. It contains the following bug fixes and improvements:
-
-**Improvements:**
-
-- Added support for parameters when creating/binding services [\#1253](https://github.com/SUSE/stratos-ui/pull/1253)
-- Added support for tags when creating service instances [\#1252](https://github.com/SUSE/stratos-ui/pull/1252)
-- Moved service instances to a new Application tab [\#1237](https://github.com/SUSE/stratos-ui/pull/1237)
-- Show deployment information in Application summary for console deployed apps [\#1243](https://github.com/SUSE/stratos-ui/pull/1243)
-- Minor UI tweaks following UX review [\#1249](https://github.com/SUSE/stratos-ui/pull/1249)
-- Pre-sort service instances in cloud foundry space instances table [\#1233](https://github.com/SUSE/stratos-ui/pull/1233)
-- Enable binding of postgres CF db service to CF hosted console [\#1231](https://github.com/SUSE/stratos-ui/pull/1231)
-- Migrate Helm chart to use MariaDB instead of Postgres [\#1230](https://github.com/SUSE/stratos-ui/pull/1230)
-- Added initial BOSH Release [\#1222](https://github.com/SUSE/stratos-ui/pull/1222)
-- Improve SSL certificate handling when deploying through Helm [\#1210](https://github.com/SUSE/stratos-ui/pull/1210)
-- Added ability to deploy application from a git url [\#1208](https://github.com/SUSE/stratos-ui/pull/1208)
-
-**Fixes:**
-
-- Fixed a couple of minor translation issues [\#1247](https://github.com/SUSE/stratos-ui/pull/1247)
-- Fix for broken cf push [\#1244](https://github.com/SUSE/stratos-ui/pull/1244)
-- Fix for translation issue on the landing page language options [\#1234](https://github.com/SUSE/stratos-ui/pull/1234)
-- Fixed filtering by text/endpoint bug [\#1268](https://github.com/SUSE/stratos-ui/pull/1268)
-- Fix for missing icon for the busy state [\#1267](https://github.com/SUSE/stratos-ui/pull/1267)
-- Fixed incorrect caching and reset behaviour of app wall filters [\#1248](https://github.com/SUSE/stratos-ui/pull/1248)
-- Fixed create app issues related to route visibility/permissions [\#1246](https://github.com/SUSE/stratos-ui/pull/1246)
-
-## 0.9.2 Alpha-3 Release
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/0.9.1...0.9.2)
-
-Third alpha release containing the following bug fixes and minor improvements:
-
-- Fix a few service instance bugs [\#1226](https://github.com/SUSE/stratos-ui/pull/1226)
-- Fixes issues where trailing slash in CF endpoint causes problems [\#1224](https://github.com/SUSE/stratos-ui/pull/1224)
-- Reuse unbound routes [\#1223](https://github.com/SUSE/stratos-ui/pull/1223)
-- Optionally enable endpoints-dashboard via env var for use in cf push [\#1221](https://github.com/SUSE/stratos-ui/pull/1221)
-- Use stable name for docker registry in CI pipelines [\#1220](https://github.com/SUSE/stratos-ui/pull/1220)
-- Improve documentation [\#1219](https://github.com/SUSE/stratos-ui/pull/1219)
-- Add upgrade documentation for helm repository based installation [\#1218](https://github.com/SUSE/stratos-ui/pull/1218)
-- Update CI piplines for environment [\#1217](https://github.com/SUSE/stratos-ui/pull/1217)
-- Fixed docker image name for all-in-one deployment [\#1216](https://github.com/SUSE/stratos-ui/pull/1216)
-- Persist app wall selection of cf/org/space in local storage [\#1214](https://github.com/SUSE/stratos-ui/pull/1214)
-- Fix 'remove' i10n in create space modal [\#1213](https://github.com/SUSE/stratos-ui/pull/1213)
-- Fix terminate instance UI [\#1211](https://github.com/SUSE/stratos-ui/pull/1211)
-- Fix issue where previously selected language was not shown on landing page [\#1209](https://github.com/SUSE/stratos-ui/pull/1209)
-- Add missing defaults to values.yaml [\#1207](https://github.com/SUSE/stratos-ui/pull/1207)
-- Fix localisation in unmap route from apps modal \(unmap route from app is fine\) [\#1206](https://github.com/SUSE/stratos-ui/pull/1206)
-- Split deploy app wizard service into smaller chunks [\#1202](https://github.com/SUSE/stratos-ui/pull/1202)
-- UX Review: Update landing page \(login + setup screens\) [\#1200](https://github.com/SUSE/stratos-ui/pull/1200)
-- Remember grid or list state for the app wall [\#1199](https://github.com/SUSE/stratos-ui/pull/1199)
-
-## 0.9.1 Alpha-2 Release
-[Full Changelog](https://github.com/SUSE/stratos-ui/compare/0.9.0...0.9.1)
-
-Second alpha release contains the following fixes:
-
-- Improved documentation when deploying using Helm  [\#1201](https://github.com/SUSE/stratos-ui/pull/1201)
-- Added the ability to deploy the Console helm chart without using shared volumes, to make it easier to deploy in multi-node clusters with basic storage provisioner such as `hostpath` [\#1204](https://github.com/SUSE/stratos-ui/pull/1204)
-- Specified the `cflinuxfs2` stack to the CF manifest.yaml, since default CAASP stack `opensuse42` is unable to deploy the app  [\#1205](https://github.com/SUSE/stratos-ui/pull/1205)
-- Changed root of the volume mount for Postgres in kubernetes to address permission issue in certain environments  [\#1203](https://github.com/SUSE/stratos-ui/pull/1203)
-
-## 0.9.0 Alpha-1 Release
-
-First Alpha release of the Stratos UI Console.
-
-For information on the Alpha feature set and on deploying the Console, please start with the main [README](https://github.com/SUSE/stratos-ui/blob/0.9.0/README.md) documentation.
+\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
